@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="User Registration for Code Red - CBC Learning Management System">
+    <title>Code Red | Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #1c59d9;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        main {
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        main h2 {
+            text-align: center;
+            color: #1c59d9;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        label {
+            font-size: 1rem;
+            color: #333;
+        }
+        input, select {
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 100%;
+        }
+        button {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border: none;
+            background: #1c59d9;
+            color: white;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #4b79ff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Register</h1>
+    </header>
+
+    <main>
+        <h2>Create an Account</h2>
+        <form action="php/register.php" method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+
+            <label for="role">Role</label>
+            <select id="role" name="role" required>
+                <option value="">--Select Role--</option>
+                <option value="administrator">Administrator</option>
+                <option value="teacher">Teacher</option>
+                <option value="student">Student</option>
+                <option value="parent">Parent</option>
+            </select>
+
+            <div id="additional-fields"></div>
+
+            <button type="submit">Register</button>
+        </form>
+    </main>
+
+    <script>
+        const roleSelect = document.getElementById('role');
+        const additionalFields = document.getElementById('additional-fields');
+
+        roleSelect.addEventListener('change', () => {
+            additionalFields.innerHTML = '';
+
+            if (roleSelect.value === 'parent') {
+                additionalFields.innerHTML = `
+                    <label for="student_name">Student Name</label>
+                    <input type="text" id="student_name" name="student_name" placeholder="Enter your child's name" required>
+                `;
+            } else if (roleSelect.value === 'teacher' || roleSelect.value === 'student') {
+                additionalFields.innerHTML = `
+                    <label for="school_name">School Name</label>
+                    <input type="text" id="school_name" name="school_name" placeholder="Enter the school name" required>
+                `;
+            } else if (roleSelect.value === 'administrator') {
+                additionalFields.innerHTML = `
+                    <label for="school_registration">School Registration Name</label>
+                    <input type="text" id="school_registration" name="school_registration" placeholder="Enter the registered school name" required>
+                `;
+            }
+        });
+
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+
+            if (password !== confirmPassword) {
+                e.preventDefault();
+                alert('Passwords do not match. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>

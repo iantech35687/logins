@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Code Red: Comprehensive CBC Learning Management System">
+    <title>Code Red | Transforming Education</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #4b79ff, #1c59d9);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.8rem;
+            margin: 0;
+        }
+        header p {
+            margin: 1rem 0;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .dropdown button {
+            background: #fff;
+            color: #333;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .dropdown button:hover {
+            background: #ddd;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            margin: 2rem auto;
+            padding: 2rem;
+            max-width: 1200px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .hero img {
+            max-width: 50%;
+            border-radius: 8px;
+        }
+        .hero-content {
+            max-width: 45%;
+        }
+        .hero h2 {
+            color: #1c59d9;
+            font-size: 2rem;
+        }
+        .hero p {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+        .hero a {
+            background: #1c59d9;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .hero a:hover {
+            background: #4b79ff;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .feature-card h3 {
+            color: #1c59d9;
+            margin-bottom: 1rem;
+        }
+        .feature-card p {
+            color: #666;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        footer a {
+            color: #4b79ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Code Red</h1>
+        <p>Empowering Learning through the Competency-Based Curriculum</p>
+        <div class="dropdown">
+            <button>Access Account</button>
+            <div class="dropdown-content">
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <a href="reset_password.html">Reset Password</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Transforming Education with Innovation</h2>
+            <p>Code Red supports Kenya's Competency-Based Curriculum by delivering tools that empower teachers, students, and parents to achieve educational excellence.</p>
+            <a href="#features">Explore Features</a>
+        </div>
+        <img src="https://via.placeholder.com/500" alt="Learning Management Overview">
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>Role-Based Dashboards</h3>
+            <p>Tailored dashboards for administrators, teachers, students, and parents.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Competency Tracking</h3>
+            <p>Track key competencies and visualize student progress.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Continuous Assessment</h3>
+            <p>Formative and summative assessment tools aligned with CBC.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Advanced Analytics</h3>
+            <p>Real-time insights into performance trends and assessments.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Gamified Learning</h3>
+            <p>Boost engagement through badges, challenges, and leaderboards.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Secure Communication</h3>
+            <p>Connect parents and teachers with secure messaging tools.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Code Red. All Rights Reserved. <a href="#">Contact Us</a></p>
+    </footer>
+</body>
+</html>
